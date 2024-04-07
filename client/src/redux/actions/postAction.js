@@ -33,7 +33,6 @@ export const createPost =
         { content, images: media },
         auth.token
       );
-      console.log(res);
       // dispatch({ type: POST_TYPES.CREATE_POST , payload: {...res.data.newPost, user: auth.user} });
       // dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } });
       // // todo notification
@@ -60,7 +59,6 @@ export const getPosts = (token) => async (dispatch) => {
   try {
     dispatch({ type: POST_TYPES.LOADING_POST, payload: true });
     const res = await getDataAPI("posts", token);
-    debugger
     dispatch({ type: POST_TYPES.GET_POSTS, payload: { ...res.data, page: 2 } });
     dispatch({ type: POST_TYPES.LOADING_POST, payload: false });
   } catch (err) {
