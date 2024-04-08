@@ -14,14 +14,17 @@ const Saved = ({ auth, dispatch }) => {
   useEffect(() => {
     setLoad(true);
     getDataAPI(`getSavePosts`, auth.token)
-    .then(res => { 
-        setSavePosts(res.data.savePosts) 
-        setResult(res.data.result)
-        setLoad(false)
-    })  
-    .catch(err => {
-        dispatch({type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg}})
-    })
+      .then((res) => {
+        setSavePosts(res.data.savePosts);
+        setResult(res.data.result);
+        setLoad(false);
+      })
+      .catch((err) => {
+        dispatch({
+          type: GLOBALTYPES.ALERT,
+          payload: { error: err.response.data.msg },
+        });
+      });
 
     return () => setSavePosts([]);
   }, [dispatch, auth.token]);
@@ -35,15 +38,12 @@ const Saved = ({ auth, dispatch }) => {
     setLoad(false);
   };
 
-
   return (
     <div>
       <PostThumb posts={savePosts} result={result} />
-
       {load && (
         <img src={LoadIcon} alt="Loading..." className="d-block mx-auto" />
       )}
-
       <LoadMoreBtn
         result={result}
         page={page}

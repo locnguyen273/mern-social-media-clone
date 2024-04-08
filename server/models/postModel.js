@@ -5,10 +5,10 @@ const { Schema } = mongoose;
 const postSchema = new Schema(
   {
     content: String,
-    images: {
-      type: Array,
-      // required: true,
-    },
+    // images: {
+    //   type: Array,
+    //   // required: true,
+    // },
     likes: [
       {
         type: mongoose.Types.ObjectId,
