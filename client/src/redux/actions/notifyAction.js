@@ -22,7 +22,7 @@ export const createNotify = ({msg, auth, socket }) => async (dispatch) => {
           }
         });
     } catch (err) {
-        dispatch({type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg} })
+        dispatch({type: GLOBALTYPES.ALERT, payload: {error: err?.response?.data?.msg,} })
     }
 };
 
@@ -33,7 +33,7 @@ export const removeNotify = ({ msg, auth, socket }) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -47,7 +47,7 @@ export const getNotifies = (token) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -61,7 +61,7 @@ export const isReadNotify = ({msg, auth}) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -74,7 +74,7 @@ export const deleteAllNotifies = (token) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };

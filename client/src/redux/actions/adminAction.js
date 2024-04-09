@@ -27,7 +27,7 @@ export const getTotalUsers = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -45,7 +45,7 @@ export const getTotalPosts = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -64,7 +64,7 @@ export const getTotalComments = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -82,7 +82,7 @@ export const getTotalLikes = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -99,7 +99,7 @@ export const getTotalSpamPosts = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -117,7 +117,7 @@ export const getSpamPosts = (token) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -148,7 +148,7 @@ export const deleteSpamPost = ({ post, auth, socket }) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }
@@ -161,7 +161,7 @@ export const getTotalActiveUsers = ({auth, socket}) => async (dispatch) => {
     dispatch({
       type: GLOBALTYPES.ALERT,
       payload: {
-        error: err.response.data.msg,
+        error: err?.response?.data?.msg,
       },
     });
   }

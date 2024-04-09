@@ -23,7 +23,7 @@ export const addMessage = ({ msg, auth, socket }) => async (dispatch) => {
   try {
     await postDataAPI('message', msg, auth.token)
   } catch (err) {
-    dispatch({ type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg } });
+    dispatch({ type: GLOBALTYPES.ALERT, payload: {error: err?.response?.data?.msg, } });
   }
 }
 
@@ -41,7 +41,7 @@ try {
 
     dispatch({ type: MESSAGE_TYPES.GET_CONVERSATIONS, payload: {newArr, result: res.data.result} });
   } catch (err) {
-    dispatch({ type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg } });
+    dispatch({ type: GLOBALTYPES.ALERT, payload: {error: err?.response?.data?.msg, } });
   }
 
 }
@@ -56,7 +56,7 @@ export const getMessages = ({ auth, id, page = 1 }) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };

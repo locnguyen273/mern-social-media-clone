@@ -57,7 +57,7 @@ export const updateComment = ({comment, post, content, auth}) => async (dispatch
     await patchDataAPI(`comment/${comment._id}`, { content }, auth.token);
 
   } catch (err) {
-    dispatch({type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg}});
+    dispatch({type: GLOBALTYPES.ALERT, payload: {error: err?.response?.data?.msg,}});
   }
 };
 
@@ -70,7 +70,7 @@ export const likeComment= ({comment, post, auth}) => async (dispatch) => {
     try {
         await patchDataAPI(`comment/${comment._id}/like`, null, auth.token);
     } catch (err) {
-        dispatch({type: GLOBALTYPES.ALERT, payload: {error: err.response.data.msg}});
+        dispatch({type: GLOBALTYPES.ALERT, payload: {error: err?.response?.data?.msg,}});
 
     }
 };
@@ -87,7 +87,7 @@ export const unLikeComment = ({ comment, post, auth }) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -124,7 +124,7 @@ export const deleteComment = ({ post, comment, auth, socket }) => async (dispatc
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };

@@ -26,7 +26,7 @@ export const login = (data) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -71,7 +71,7 @@ export const changePassword = ({oldPassword, newPassword, cnfNewPassword, auth})
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -96,7 +96,7 @@ export const adminLogin = (data) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -121,7 +121,7 @@ export const refreshToken = () => async (dispatch) => {
     } catch (err) {
       dispatch({
         type: GLOBALTYPES.ALERT,
-        payload: { error: err.response.data.msg },
+        payload: { error: err?.response?.data?.msg, },
       });
     }
   }
@@ -153,7 +153,7 @@ export const register = (data) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -173,7 +173,7 @@ export const registerAdmin = (data) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
@@ -187,7 +187,7 @@ export const logout = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: GLOBALTYPES.ALERT,
-      payload: { error: err.response.data.msg },
+      payload: { error: err?.response?.data?.msg, },
     });
   }
 };
